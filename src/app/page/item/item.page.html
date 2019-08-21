@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   name:&nbsp; <ion-input [(ngModel)]="item.name"></ion-input>
+price : &nbsp;<ion-input [(ngModel)]="item.price"></ion-input>
+type : &nbsp;<ion-input [(ngModel)]="item.type"></ion-input>
+
+<ion-button (click)="submit()">submit</ion-button>
+</ion-content>

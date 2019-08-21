@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- <ion-input>Name</ion-input>{{name}}
+<ion-input>Price</ion-input>{{price}}
+<ion-input>Type</ion-input>{{type}}
+<br> -->
+name:&nbsp; <ion-input [(ngModel)]="object.name"></ion-input>
+price : &nbsp;<ion-input [(ngModel)]="object.price"></ion-input>
+type : &nbsp;<ion-input [(ngModel)]="object.type"></ion-input> 
+
+<br>
+<ion-button (click)="updateitem(object,object.key)">Update</ion-button>
+</ion-content>

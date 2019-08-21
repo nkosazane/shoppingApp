@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <div id="recaptcha-container"></div> -->
+
+  <form class="form" [formGroup]="validations_form"  (ngSubmit)="loginUser(validations_form.value)">
+ 
+    <ion-item>
+      <ion-label  position="floating" color="primary">Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+ 
+    <ion-item>
+      <ion-label  position="floating" color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+ 
+    <ion-button  class="submit-btn" type="submit"  [disabled]="!validations_form.valid">Log In</ion-button>
+ 
+    <label class="error-message">{{errorMessage}}</label>
+
+  
+
+    <div class="form-group text-center">
+      <img src="assets/gg.png"style="height: 10px;width:10px;" alt="" srcset=""
+        (click)="googleLogin()" style="cursor: pointer;">
+    </div>
+    <div class="form-group text-center">
+      <img src="assets/fff.png" alt="" srcset=""
+        (click)="facebookLogin()" style="cursor: pointer;">
+    </div>
+    <div class="form-group text-center">
+      <img src="assets/tt.jpg" alt="" srcset=""
+      (click)="twitterlogin()" style="cursor: pointer;">
+    </div>
+    <ion-button  expand="full" routerLink="/phone" > <img src="assets/ggg.png"style="height: 30px;width:30px">Sign in with phone</ion-button>
+
+  </form>
+  <p class="go-to-register">
+    No account yet? <a (click)="goToRegisterPage()">Create an account.</a>
+  </p>
+
+ 
+   
+          
+</ion-content>

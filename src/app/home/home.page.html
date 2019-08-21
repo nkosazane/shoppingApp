@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+<ion-item *ngFor="let grocery of itemlist "(click)="update(grocery)">
+
+  {{grocery.name}}
+  {{grocery.price}}
+  {{grocery.type}}
+
+</ion-item>
+<!-- <ion-button (click)="update(item)">update</ion-button> -->
+</ion-content>
